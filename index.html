@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>yourname</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background"></div>
+  <div class="grain"></div>
+  <div id="particles"></div>
+
+  <main class="page">
+    <section class="profile">
+      <img class="avatar" src="assets/avatar.jpg" alt="Avatar">
+      <h1>scnwp.ae</h1>
+      <p>Video Editor • Anime & Movie Edits</p>
+
+      <div class="socials">
+        <a href="https://www.tiktok.com/@scnwp.vfx" target="_blank">TikTok</a>
+        <a href="https://discord.gg/PXgs4zWj6" target="_blank">Discord</a>
+      </div>
+
+      <div class="discord-card">
+        <img src="assets/avatar.jpg" alt="Discord avatar">
+        <div class="discord-info">
+          <strong>Lin</strong>
+          <span><i></i> online</span>
+        </div>
+        <div class="discord-badge">HypeSquad Bravery</div>
+      </div>
+    </section>
+
+    <section class="music-player">
+  <img id="cover" src="assets/cover.jpg" alt="Cover">
+  <div class="song-info">
+    <div id="song-title">dark beach × iris (slowed)</div>
+    <div class="time-row">
+      <span id="current">0:00</span>
+      <input id="progress" type="range" min="0" max="100" value="0">
+      <span id="duration">0:00</span>
+    </div>
+  </div>
+
+      <div class="controls">
+        <button id="prev">⏮</button>
+        <button id="play">▶</button>
+        <button id="next">⏭</button>
+      </div>
+
+      <audio id="audio" preload="metadata"></audio>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

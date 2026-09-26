@@ -1,0 +1,262 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  background: #111;
+}
+
+.background {
+  position: fixed;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0,0,0,.42), rgba(0,0,0,.58)),
+    url("assets/background.jpg") center/cover no-repeat;
+  filter: grayscale(1);
+  z-index: 0;
+}
+
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background: radial-gradient(circle at center, transparent 25%, rgba(0,0,0,.55) 100%);
+}
+
+#particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.particle {
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  background: white;
+  border-radius: 50%;
+  opacity: .75;
+  animation: float linear infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(110vh) rotate(0deg); opacity: 0; }
+  15% { opacity: .8; }
+  85% { opacity: .8; }
+  100% { transform: translateY(-15vh) rotate(360deg); opacity: 0; }
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 55px;
+  padding: 30px;
+  position: relative;
+  z-index: 2;
+}
+
+.profile {
+  text-align: center;
+  animation: appear 1s ease both;
+}
+
+.avatar {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid rgba(255,255,255,.5);
+  box-shadow: 0 0 35px rgba(255,255,255,.15);
+}
+
+h1 {
+  margin: 14px 0 4px;
+  font-size: clamp(28px, 5vw, 48px);
+  letter-spacing: -1px;
+}
+
+.profile p {
+  margin: 0 0 18px;
+  opacity: .75;
+  font-size: 14px;
+}
+
+.socials {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.socials a {
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  padding: 7px 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  background: rgba(0,0,0,.2);
+  backdrop-filter: blur(12px);
+  border-radius: 999px;
+  transition: .2s;
+}
+
+.socials a:hover {
+  background: rgba(255,255,255,.15);
+  transform: translateY(-2px);
+}
+
+.discord-card {
+  margin-top: 20px;
+  width: 320px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(20,20,20,.45);
+  backdrop-filter: blur(18px);
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,.25);
+}
+
+.discord-card img {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.discord-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.discord-info strong {
+  font-size: 14px;
+}
+
+.discord-info span {
+  font-size: 11px;
+  opacity: .65;
+}
+
+.discord-info i {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  background: #62d66f;
+  border-radius: 50%;
+  margin-right: 5px;
+}
+
+.discord-badge {
+  position: absolute;
+  margin-top: -74px;
+  margin-left: 135px;
+  font-size: 10px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.12);
+  backdrop-filter: blur(10px);
+}
+
+.music-player {
+  width: min(720px, 92vw);
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 13px;
+  background: rgba(20,20,20,.48);
+  border: 1px solid rgba(255,255,255,.15);
+  backdrop-filter: blur(22px);
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0,0,0,.3);
+  animation: appear 1s .2s ease both;
+}
+
+.music-player > img {
+  width: 62px;
+  height: 62px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.song-info {
+  min-width: 0;
+  flex: 1;
+}
+
+#song-title {
+  font-size: 14px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.time-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  opacity: .65;
+}
+
+#progress {
+  flex: 1;
+  accent-color: white;
+  cursor: pointer;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.controls button {
+  border: 0;
+  color: white;
+  background: transparent;
+  font-size: 16px;
+  cursor: pointer;
+  opacity: .8;
+  transition: .15s;
+}
+
+.controls button:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+#play {
+  font-size: 21px;
+}
+
+@keyframes appear {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .page { gap: 35px; }
+  .discord-card { width: min(320px, 90vw); }
+  .music-player { padding: 10px; }
+  .music-player > img { width: 52px; height: 52px; }
+  .controls button { font-size: 14px; }
+}
